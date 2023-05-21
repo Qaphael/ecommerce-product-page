@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="container">
+      <nav class="navabr">
+        <a href="#" class="nav-toggle" id="nav-toggle">
+          <img src="./images/icon-menu.svg" class="menu__logo" />
+        </a>
+        <a href="#" class="logo">
+          <img src="./images/logo.svg" class="logo-image" />
+        </a>
+
+        <ul class="menu">
+          <div class="menu--children">
+            <a href="#" id="nav-close" class="nav-close">
+              <img src="./images/icon-close.svg" />
+            </a>
+            <li class="menu-item">
+              <a href="#" class="menu-link">Collections</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link">Men</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link">Women</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link">About</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link">Contact</a>
+            </li>
+          </div>
+        </ul>
+
+        <div class="profile-n-cart">
+          <div class="menuWrapper">
+            <a href="#" class="icon-cart btn">
+              <img src="./images/icon-cart.svg" class="cart-image" />
+              <span class="indicator"></span>
+            </a>
+          </div>
+          <a href="#" class="image-avatar">
+            <img src="./images/image-avatar.png" class="avatar-image" />
+          </a>
+        </div>
+      </nav>
+
+      <div class="body-container">
+        <div class="cart-item invisible">
+          <p class="cart-title">Cart</p>
+          <div class="divider"></div>
+          <div class="cart__content empty">
+            <p>Your cart is empty</p>
+          </div>
+        </div>
+        <div class="product-image-box">
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img
+                class="cursor"
+                src="./images/image-product-1.jpg"
+                style="width: 100%"
+                onclick="openBtn();currentSlide_lb(1)"
+              />
+            </div>
+
+            <div class="mySlides fade">
+              <img
+                class="cursor"
+                src="./images/image-product-2.jpg"
+                style="width: 100%"
+                onclick="openBtn();currentSlide_lb(2)"
+              />
+            </div>
+
+            <div class="mySlides fade">
+              <img
+                class="cursor"
+                src="./images/image-product-3.jpg"
+                style="width: 100%"
+                onclick="openBtn();currentSlide_lb(3)"
+              />
+            </div>
+
+            <div class="mySlides fade">
+              <img
+                class="cursor"
+                src="./images/image-product-4.jpg"
+                style="width: 100%"
+                onclick="openBtn();currentSlide_lb(4)"
+              />
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 1 3 9l8 8"
+                  stroke="#1D2026"
+                  stroke-width="3"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a class="next" onclick="plusSlides(1)">
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m2 1 8 8-8 8"
+                  stroke="#1D2026"
+                  stroke-width="3"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <br />
+
+          <div class="thumbnails" style="text-align: center">
+            <div class="dot" onclick="currentSlide(1)"></div>
+            <div class="dot" onclick="currentSlide(2)"></div>
+            <div class="dot" onclick="currentSlide(3)"></div>
+            <div class="dot" onclick="currentSlide(4)"></div>
+          </div>
+        </div>
+
+        <div class="product-detail-box">
+          <div class="product-wrapper">
+            <p class="company-name">Sneaker Company</p>
+            <p class="product-name">Fall Limited Edition Sneakers</p>
+            <p class="product-detail">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
+            <div class="price-box">
+              <div class="discounted-price-box">
+                <p class="product-price">$125.00</p>
+                <span class="discount">50%</span>
+              </div>
+              <div class="real-price-box">
+                <p class="real-price">$250.00</p>
+              </div>
+            </div>
+
+            <div class="cart-detail-box">
+              <div class="quantity-box">
+                <span id="minus" class="minus"
+                  ><img src="./images/icon-minus.svg"
+                /></span>
+                <span id="quantity" class="quantity">0</span>
+                <span id="add" class="add"
+                  ><img src="./images/icon-plus.svg"
+                /></span>
+              </div>
+              <div class="add-to-cart-box" id="cart-button">
+                <a href="#">
+                  <div>
+                    <svg
+                      width="22"
+                      height="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                        fill="#f7f8fd"
+                        fill-rule="nonzero"
+                      />
+                    </svg>
+                  </div>
+
+                  Add to cart
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <div class="slideshowTwo-container">
+          <a class="close-lite-box" id="close-btn">
+            <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                fill="#69707D"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <div class="my-slides fade">
+            <img src="./images/image-product-1.jpg" style="width: 100%" />
+          </div>
+
+          <div class="my-slides fade">
+            <img src="./images/image-product-2.jpg" style="width: 100%" />
+          </div>
+
+          <div class="my-slides fade">
+            <img src="./images/image-product-3.jpg" style="width: 100%" />
+          </div>
+
+          <div class="my-slides fade">
+            <img src="./images/image-product-4.jpg" style="width: 100%" />
+          </div>
+
+          <a class="prev-lite-box" onclick="plusSlides_lb(-1)">
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a class="next-lite-box" onclick="plusSlides_lb(1)">
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <br />
+
+        <div class="lb-thumbnail" style="text-align: center">
+          <div class="dot-light-box" onclick="currentSlide_lb(1)"></div>
+          <div class="dot-light-box" onclick="currentSlide_lb(2)"></div>
+          <div class="dot-light-box" onclick="currentSlide_lb(3)"></div>
+          <div class="dot-light-box" onclick="currentSlide_lb(4)"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a target="_blank" href="https://www.frontendmentor.io/profile/Qaphael">Opiyo Qaphael</a>.
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

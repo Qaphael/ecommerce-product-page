@@ -339,7 +339,7 @@ img {
 }
 
 .dot:nth-child(1) {
-  background-image: url(/images/image-product-1-thumbnail.jpg);
+  background-image: url("../images/image-product-1-thumbnail.jpg");
   background-size: cover;
 }
 .dot:nth-child(2) {
